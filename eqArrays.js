@@ -1,21 +1,21 @@
-const eqArrays = function (array1, array2) {
+const eqArrays = function(array1, array2) {
   if (array1.length === 0 && array2.length === 0) { //this targets case where empty strings are evaluated.
-    return true
+    return true;
   } else if (array1.length === array2.length) {
     for (let i = 0; i < array1.length; i++) { //looping to check each element in array 1 against array2 elements that share its respective index.
       if (array1[i] === array2[i]) {
-        return true
+        return true;
       } else {
-        return false
+        return false;
       }
     }
   } else {
-    return "arrays are not of equal length"
+    return "arrays are not of equal length";
   }
-}
+};
 
 // FUNCTION IMPLEMENTATION
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`🟩🟩🟩 Assertion Passed: ${actual} === ${expected}`);
   } else {
