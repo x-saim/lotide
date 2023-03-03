@@ -16,10 +16,14 @@ const assertEqual = function (actual, expected) {
 const countOnly = function (allItems, itemsToCount) {
   let results = {};
   for (const item of allItems) {
-    if (results[item]) {
-      results[item] += 1;
-    } else {
-      results[item] = 1;
+    //added if statement to only increment results if the item is found in itemsToCount object.
+    if (itemsToCount[item]) {
+      //if statement to check if results has a matching item, if not it will store the value 1 to begin and then continue the iteration. 
+      if (results[item]) {
+        results[item] += 1;
+      } else {
+        results[item] = 1;
+      }
     }
   }
   return results;
@@ -41,9 +45,9 @@ const firstNames = [
 
 const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+assertEqual(result1["Jason"], 1); //pass
+assertEqual(result1["Karima"], undefined); //pass
+assertEqual(result1["Fang"], 2); //pass
+assertEqual(result1["Agouhanna"], undefined); //pass
 
 console.log(result1);
