@@ -31,6 +31,11 @@ const countLetters = function (statement) {
 //test code
 
 const statement = "    lighthouse in the house   ";
+
+assertEqual(countLetters(statement)["e"], 3); //[pass]
+assertEqual(countLetters(statement)["h"], 4); //[pass]
+assertEqual(countLetters(statement)[" "], undefined); //checks for white spaces between letters. Should pass by resulting in undefined.
+
 console.log(countLetters(statement));
 console.log(countLetters("saimisastudentatLHL"));
 
