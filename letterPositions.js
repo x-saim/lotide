@@ -1,10 +1,10 @@
 /* Implementation of letterPositions()
 
-- return all indices (zero-based positions) in the strong where each character is found.
-
-
+Goal: return all indices (zero-based positions) in the strong where each character is found.
 
 */
+
+
 const eqArrays = function (array1, array2) {
   if (array1.length === 0 && array2.length === 0) { //this targets case where empty strings are evaluated.
     return true;
@@ -34,21 +34,25 @@ const assertArraysEqual = function (array1, array2) {
 
 const letterPositions = function (statement) {
   const results = {};
-  //let statementArr = statement.split(""); //convert str to array
-  const arr = [];
-  //logic to update results here
   for (let i = 0; i < statement.length; i++) {
-    //let letter = statement[i];
-    if (!results[statement[i]]) { //checking if letter in str exists in results.
-      results[statement[i]] = arr.push(i);
+
+    //check if results has any keys equal to letters in statement
+    if (results[statement[i]]) {
+
+      //if letter matches key, we will assign the key the index of the letter as an array.
+      results[statement[i]].push(i)
+    } else {
+      //if the key doesn't exist, we will assign results object a new key:value pair with the key being letter from statement and [i] being an array with the index of the letter.
+      results[statement[i]] = [i];
     }
   }
   return results;
-};
+}
 
 const statement = "hello";
-console.log(letterPositions(statement));
-console.log(letterPositions(statement)["e"]);
-assertArraysEqual(letterPositions(statement)["e"], [1]);
-//assertArraysEqual(letterPositions(statement)["h"], [0]);
-//assertArraysEqual(letterPositions(statement)["l"], [2, 3]);
+console.log(letterPositions(statement)); // { h: [ 0 ], e: [ 1 ], l: [ 2, 3 ], o: [ 4 ] }
+console.log(letterPositions(statement)["e"]); // [1]
+assertArraysEqual(letterPositions(statement)["e"], [1]); //equal
+assertArraysEqual(letterPositions(statement)["h"], [0]); //equal
+assertArraysEqual(letterPositions(statement)["l"], [2, 3]); //equal
+assertArraysEqual(letterPositions(statement)["o"], [4]); //equal
