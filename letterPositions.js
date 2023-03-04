@@ -5,7 +5,7 @@ Goal: return all indices (zero-based positions) in the strong where each charact
 */
 
 
-const eqArrays = function (array1, array2) {
+const eqArrays = function(array1, array2) {
   if (array1.length === 0 && array2.length === 0) { //this targets case where empty strings are evaluated.
     return true;
   } else if (array1.length === array2.length) {
@@ -21,7 +21,7 @@ const eqArrays = function (array1, array2) {
   }
 };
 
-const assertArraysEqual = function (array1, array2) {
+const assertArraysEqual = function(array1, array2) {
   if (eqArrays(array1, array2)) {
     console.log("Array 1 is equal to Array 2.");
   } else {
@@ -32,7 +32,7 @@ const assertArraysEqual = function (array1, array2) {
 
 //expected output should be an array with indices noted.
 
-const letterPositions = function (statement) {
+const letterPositions = function(statement) {
   const results = {};
   for (let i = 0; i < statement.length; i++) {
 
@@ -40,14 +40,14 @@ const letterPositions = function (statement) {
     if (results[statement[i]]) {
 
       //if letter matches key, we will assign the key the index of the letter as an array.
-      results[statement[i]].push(i)
+      results[statement[i]].push(i);
     } else {
       //if the key doesn't exist, we will assign results object a new key:value pair with the key being letter from statement and [i] being an array with the index of the letter.
       results[statement[i]] = [i];
     }
   }
   return results;
-}
+};
 
 const statement = "hello";
 console.log(letterPositions(statement)); // { h: [ 0 ], e: [ 1 ], l: [ 2, 3 ], o: [ 4 ] }
