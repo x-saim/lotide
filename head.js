@@ -1,5 +1,5 @@
 // FUNCTION IMPLEMENTATION
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`🟩🟩🟩 Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -7,12 +7,12 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const head = function (array) {
+const head = function(array) {
   if (array.length >= 1) {
-    return array[0]
+    return array[0];
   } else if (array === [])
     return undefined;
-}
+};
 
 // TEST CODE
 

@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`🟩🟩🟩 Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -10,7 +10,7 @@ const assertEqual = function (actual, expected) {
 // function return to be count of each of the letters in that sentence as an object
 
 
-const countLetters = function (statement) {
+const countLetters = function(statement) {
   let results = {};
   statement = statement.trim(); //eliminates any whitespaces before or after string statement.
   statement = statement.replace(/\s/g, ""); //eliminates any space between letters

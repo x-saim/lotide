@@ -1,17 +1,13 @@
 const eqArrays = function(array1, array2) {
-  if (array1.length === 0 && array2.length === 0) { //this targets case where empty strings are evaluated.
-    return true;
-  } else if (array1.length === array2.length) {
-    for (let i = 0; i < array1.length; i++) { //looping to check each element in array 1 against array2 elements that share its respective index.
-      if (array1[i] === array2[i]) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  } else {
+  if (array1.length !== array2.length) {
     return false;
   }
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
+      return false;
+    }
+  }
+  return true;
 };
 
 const assertArraysEqual = function(array1, array2) {
