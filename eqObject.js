@@ -7,8 +7,6 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-
-
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
@@ -21,18 +19,26 @@ const eqObjects = function(object1, object2) {
       if (object1Keys[i] === object2Keys[i]) {
         for (let e of object1Keys) {
           if (object1[e] === object2[e]) {
-            return `Objects have matching keys: ${object1Keys} === ${object2Keys} and matching values: ${Object.values(object1).sort()} === ${Object.values(object2).sort()}`;
+            console.log(`Objects have matching keys: ${object1Keys} === ${object2Keys} and matching values: ${Object.values(object1).sort()} === ${Object.values(object2).sort()}`);
+            return true;
           }
         }
-        return "Object does not have matching values.";
+        console.log("Object does not have matching value");
+        return false;
       }
     }
-    return "Objects do not have matching keys";
   }
+  return false;
 };
 
-// TEST CODE
+// TEST CODE 1
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
-console.log(eqObjects(shirtObject, anotherShirtObject)); // => true
+//console.log(eqObjects(shirtObject, anotherShirtObject));
+assertEqual(eqObjects(shirtObject, anotherShirtObject), true); // => true
+
+// TEST CODE 2
+
+const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
+assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false); // => false
