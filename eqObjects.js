@@ -1,5 +1,5 @@
 
-const eqArrays = function(array1, array2) {
+const eqArrays = function (array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -12,7 +12,7 @@ const eqArrays = function(array1, array2) {
 };
 
 
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`🟩🟩🟩 Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -23,7 +23,7 @@ const assertEqual = function(actual, expected) {
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
 
 
   //we want to sort out the keys so indices match.
@@ -53,8 +53,6 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 };
-
-// assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true); // => true
 
 
 // TEST CODE 1 - Primitives As Values
