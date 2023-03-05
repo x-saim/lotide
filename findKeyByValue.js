@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`🟩🟩🟩 Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -9,23 +9,22 @@ const assertEqual = function (actual, expected) {
 
 /*
 
-Implement the function findKeyByValue which takes in an object and a value. 
+Implement the function findKeyByValue which takes in an object and a value.
 
 It should scan the object and return the first key which contains the given value. If no key with that given value is found, then it should return undefined.
 
 */
 
-const findKeyByValue = function (object, value) {
-  //1. iterate through object
-  for (let key in object) {
-    //2. find first key which contains given value
-    if (object[key] === value) {
-      return key; //return first key 
+const findKeyByValue = function(object, value) {
+
+  const keysObject = Object.keys(object); //returns array of object's keys.
+  for (let e of keysObject) { // iterate through array.
+    if (object[e] === value) { //check if object's values matches given value.
+      return e; //returns key name
     }
   }
-  //3. if no key with given value exists, return undefined.
-  return undefined
-}
+  return undefined; //once forLoop ends, if no key was found return undefined.
+};
 
 
 // TEST CODE
@@ -46,7 +45,7 @@ const bestMovieByGenre = {
   sci_fi: "Inception",
   western: "The Good, the Bad and the Ugly ",
   superhero: "The Dark Knight"
-}
+};
 
 assertEqual(findKeyByValue(bestMovieByGenre, "Inception"), "sci_fi"); // pass
 assertEqual(findKeyByValue(bestMovieByGenre, "The Dark Knight"), "superhero"); // pass
