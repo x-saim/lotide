@@ -1,14 +1,4 @@
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  }
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 const without = function(source, itemsToRemove) {
   let updatedSource = [];
@@ -22,13 +12,7 @@ const without = function(source, itemsToRemove) {
   } return updatedSource;
 };
 
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2)) {
-    console.log("Array 1 is equal to Array 2.");
-  } else {
-    console.log("Array 1 is not equal to Array 2.");
-  }
-};
+module.exports = without;
 
 // test code
 console.log(without([1, 2, 3], [2])); // => [1, 3]
