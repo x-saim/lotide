@@ -8,6 +8,8 @@ const asssertObjectsEqual = function(object1, object2) {
     console.log(`❌❌❌ Assertion Failed: ${inspect(object1)} !== ${inspect(object2)}`);
   }
 };
+// Returns true if both objects have identical keys with identical values.
+// Otherwise you get back a big fat false!
 
 // TEST CODE
 
