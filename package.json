@@ -1,6 +1,6 @@
 {
   "name": "@x-saim/lotide",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A mini clone of the [Lodash](https://lodash.com) library.",
   "main": "index.js",
   "directories": {
